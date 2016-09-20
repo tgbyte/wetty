@@ -10,6 +10,6 @@ RUN useradd -d /home/term -m -s /bin/bash term
 RUN echo 'term:term' | chpasswd
 
 EXPOSE 3000
+USER term
 
-ENTRYPOINT ["node"]
-CMD ["app.js", "-p", "3000"]
+ENTRYPOINT ["/app/entrypoint.sh"]
